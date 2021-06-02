@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -145,7 +146,7 @@ namespace DatabaseAccess
                 return (list != null) ? list : new List<FurnitureFactory>();
             }
         }
-        public List<FurnitureStore> ReadFurnitureStore()
+        public List<FurnitureStore> ReadFurnitureStores()
         {
             using (var db = new FurnitureDBContainer())
             {
@@ -197,6 +198,16 @@ namespace DatabaseAccess
                 List<Sells> list = db.Sells.ToList();
 
                 return (list != null) ? list : new List<Sells>();
+            }
+        }
+
+        public List<Furniture> ReadFurnitures()
+        {
+            using (var db = new FurnitureDBContainer())
+            {
+                List<Furniture> list = db.Furnitures.ToList();
+
+                return (list != null) ? list : new List<Furniture>();
             }
         }
     }

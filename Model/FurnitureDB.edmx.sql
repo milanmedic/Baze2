@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/02/2021 05:42:48
+-- Date Created: 06/02/2021 12:52:54
 -- Generated from EDMX file: C:\Users\User\Documents\BazePodataka2\BazePodataka2\Model\FurnitureDB.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [FurnitureDB];
+USE [FurnitureDBPomoziBoze];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO

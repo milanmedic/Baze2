@@ -121,9 +121,9 @@ namespace DatabaseAccess
             };
         }
 
-        public Tuple<bool, string> CreateFurnitureStore(int id, string name, string city, int streetNum, string streetNumSuffix, DateTime openingDate)
+        public Tuple<bool, string> CreateFurnitureStore(int id, string name, string street, string city, int streetNum, string streetNumSuffix, DateTime openingDate)
         {
-            if (id == 0 || String.IsNullOrEmpty(name) || String.IsNullOrEmpty(city) || String.IsNullOrEmpty(streetNumSuffix) || openingDate == null)
+            if (id == 0 || String.IsNullOrEmpty(name) || String.IsNullOrEmpty(city) || String.IsNullOrEmpty(streetNumSuffix) || String.IsNullOrEmpty(street) || openingDate == null)
             {
                 return new Tuple<bool, string>(false, "Fill all the fields!");
             }
@@ -138,6 +138,7 @@ namespace DatabaseAccess
                     Id = id,
                     Name = name,
                     City = city,
+                    Street = street,
                     StreetNum = streetNum,
                     StreetNumSuffix = streetNumSuffix,
                     OpeningDate = openingDate

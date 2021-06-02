@@ -62,9 +62,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddWindow\AddFurnitureStore.xaml.cs">
+      <DependentUpon>AddFurnitureStore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeleteAccess.cs" />
     <Compile Include="ReadAccess.cs" />
     <Compile Include="UpdateAccess.cs" />
+    <Page Include="AddWindow\AddFurnitureStore.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
