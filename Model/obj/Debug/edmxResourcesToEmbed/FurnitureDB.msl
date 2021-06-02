@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FurnitureDBStoreContainer" CdmEntityContainer="FurnitureDBContainer">
+    <EntitySetMapping Name="FurnitureStores">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.FurnitureStore)">
+        <MappingFragment StoreEntitySet="FurnitureStores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetNum" ColumnName="StreetNum" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="StreetNumSuffix" ColumnName="StreetNumSuffix" />
+          <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FurnitureFactories">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.FurnitureFactory)">
+        <MappingFragment StoreEntitySet="FurnitureFactories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryOfOrigin" ColumnName="CountryOfOrigin" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="StreetNum" ColumnName="StreetNum" />
+          <ScalarProperty Name="StreetNumSuffix" ColumnName="StreetNumSuffix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FurnitureFactoryId" ColumnName="FurnitureFactoryId" />
+          <ScalarProperty Name="SellsId" ColumnName="SellsId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ManufacturingDate" ColumnName="ManufacturingDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FactoryOrigin" ColumnName="FactoryOrigin" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.ProductType)">
+        <MappingFragment StoreEntitySet="ProductTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sectors">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Sector)">
+        <MappingFragment StoreEntitySet="Sectors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmployeeCount" ColumnName="EmployeeCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Sales)">
+        <MappingFragment StoreEntitySet="Sectors_Sales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.ReclamationService)">
+        <MappingFragment StoreEntitySet="Sectors_ReclamationService">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.CallCenter)">
+        <MappingFragment StoreEntitySet="Sectors_CallCenter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reclamations">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Reclamation)">
+        <MappingFragment StoreEntitySet="Reclamations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateOfArrival" ColumnName="DateOfArrival" />
+          <ScalarProperty Name="ReclamationDescription" ColumnName="ReclamationDescription" />
+          <ScalarProperty Name="ReclamationServiceId" ColumnName="ReclamationServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Furnitures">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Furniture)">
+        <MappingFragment StoreEntitySet="Furnitures">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ProductionDate" ColumnName="ProductionDate" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Collection" ColumnName="Collection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Client)">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Complaint)">
+        <MappingFragment StoreEntitySet="Complaints">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CallCenterId" ColumnName="CallCenterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sells">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Sells)">
+        <MappingFragment StoreEntitySet="Sells">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FurnitureStoreFurnitureFactory" TypeName="FurnitureDB.FurnitureStoreFurnitureFactory" StoreEntitySet="FurnitureStoreFurnitureFactory">
+      <EndProperty Name="FurnitureStore1">
+        <ScalarProperty Name="Id" ColumnName="FurnitureStores_Id" />
+      </EndProperty>
+      <EndProperty Name="FurnitureFactory">
+        <ScalarProperty Name="Id" ColumnName="FurnitureFactories_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FurnitureStoreSector" TypeName="FurnitureDB.FurnitureStoreSector" StoreEntitySet="Sectors">
+      <EndProperty Name="FurnitureStore1">
+        <ScalarProperty Name="Id" ColumnName="FurnitureStore_Id" />
+      </EndProperty>
+      <EndProperty Name="Sector">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductProductType" TypeName="FurnitureDB.ProductProductType" StoreEntitySet="ProductTypes">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductType">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SectorEmployee" TypeName="FurnitureDB.SectorEmployee" StoreEntitySet="Employees">
+      <EndProperty Name="Sector">
+        <ScalarProperty Name="Id" ColumnName="Sector_Id" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeeEmployee" TypeName="FurnitureDB.EmployeeEmployee" StoreEntitySet="EmployeeEmployee">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Employees1_Id" />
+      </EndProperty>
+      <EndProperty Name="Employee1">
+        <ScalarProperty Name="Id" ColumnName="Employees_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FurnitureReclamation" TypeName="FurnitureDB.FurnitureReclamation" StoreEntitySet="Furnitures">
+      <EndProperty Name="Reclamation">
+        <ScalarProperty Name="Id" ColumnName="Reclamation_Id" />
+      </EndProperty>
+      <EndProperty Name="Furniture">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SellsClient" TypeName="FurnitureDB.SellsClient" StoreEntitySet="SellsClient">
+      <EndProperty Name="Sells">
+        <ScalarProperty Name="Id" ColumnName="Sells_Id" />
+      </EndProperty>
+      <EndProperty Name="Client">
+        <ScalarProperty Name="Id" ColumnName="Clients_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
