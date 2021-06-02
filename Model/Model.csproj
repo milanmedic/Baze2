@@ -64,9 +64,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CallCenter.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Complaint.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Furniture.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="FurnitureDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureFactory.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureStore.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductType.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reclamation.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReclamationService.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sector.cs">
+      <DependentUpon>FurnitureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sells.cs">
       <DependentUpon>FurnitureDB.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
