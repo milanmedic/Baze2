@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e199e821c84a4840aff2661b333cc379" Name="Diagram1" ZoomLevel="67" >
+        <EntityTypeShape EntityType="FurnitureDB.FurnitureStore" Width="1.5" PointX="4.625" PointY="1.625" />
+        <EntityTypeShape EntityType="FurnitureDB.FurnitureFactory" Width="1.5" PointX="8.75" PointY="1.625" />
+        <EntityTypeShape EntityType="FurnitureDB.Product" Width="1.5" PointX="18.5" PointY="1.25" />
+        <EntityTypeShape EntityType="FurnitureDB.ProductType" Width="1.5" PointX="23.375" PointY="2.125" />
+        <EntityTypeShape EntityType="FurnitureDB.Sector" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Employee" Width="1.5" PointX="4.5" PointY="11.625" />
+        <EntityTypeShape EntityType="FurnitureDB.Reclamation" Width="1.5" PointX="16.625" PointY="6.5" />
+        <EntityTypeShape EntityType="FurnitureDB.Furniture" Width="1.5" PointX="16.375" PointY="13.5" />
+        <EntityTypeShape EntityType="FurnitureDB.Client" Width="1.5" PointX="20" PointY="8" />
+        <EntityTypeShape EntityType="FurnitureDB.Complaint" Width="1.5" PointX="22.5" PointY="10.375" />
+        <EntityTypeShape EntityType="FurnitureDB.Sells" Width="1.5" PointX="13" PointY="3.375" />
+        <AssociationConnector Association="FurnitureDB.FurnitureStoreFurnitureFactory" />
+        <AssociationConnector Association="FurnitureDB.FurnitureStoreSector" />
+        <AssociationConnector Association="FurnitureDB.FurnitureFactoryProduct" />
+        <AssociationConnector Association="FurnitureDB.ProductProductType" />
+        <AssociationConnector Association="FurnitureDB.SellsProduct" />
+        <AssociationConnector Association="FurnitureDB.SectorEmployee" />
+        <AssociationConnector Association="FurnitureDB.EmployeeEmployee" />
+        <AssociationConnector Association="FurnitureDB.FurnitureReclamation" />
+        <AssociationConnector Association="FurnitureDB.ClientFurniture" />
+        <AssociationConnector Association="FurnitureDB.ClientComplaint" />
+        <EntityTypeShape EntityType="FurnitureDB.Sales" Width="1.5" PointX="9.125" PointY="5.625" />
+        <InheritanceConnector EntityType="FurnitureDB.Sales" />
+        <EntityTypeShape EntityType="FurnitureDB.ReclamationService" Width="1.5" PointX="9.125" PointY="7.25" />
+        <InheritanceConnector EntityType="FurnitureDB.ReclamationService" />
+        <EntityTypeShape EntityType="FurnitureDB.CallCenter" Width="1.5" PointX="9.125" PointY="8.625" />
+        <InheritanceConnector EntityType="FurnitureDB.CallCenter" />
+        <AssociationConnector Association="FurnitureDB.SalesSells" />
+        <AssociationConnector Association="FurnitureDB.ReclamationServiceReclamation" />
+        <AssociationConnector Association="FurnitureDB.CallCenterComplaint" />
+        <AssociationConnector Association="FurnitureDB.SellsClient" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{1A05D030-77D0-4C77-B72F-F6685FAE457E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAccess", "DatabaseAccess\DatabaseAccess.csproj", "{01CB2FAC-D22B-49D0-8432-97CC36C6A5E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A05D030-77D0-4C77-B72F-F6685FAE457E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A05D030-77D0-4C77-B72F-F6685FAE457E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A05D030-77D0-4C77-B72F-F6685FAE457E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A05D030-77D0-4C77-B72F-F6685FAE457E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01CB2FAC-D22B-49D0-8432-97CC36C6A5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01CB2FAC-D22B-49D0-8432-97CC36C6A5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01CB2FAC-D22B-49D0-8432-97CC36C6A5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01CB2FAC-D22B-49D0-8432-97CC36C6A5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13D7DC79-F7BB-44EB-A5E6-0D72FE1B902B}
+	EndGlobalSection
+EndGlobal

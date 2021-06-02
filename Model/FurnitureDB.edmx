@@ -1,0 +1,1061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FurnitureDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FurnitureDBStoreContainer">
+    <EntitySet Name="FurnitureStores" EntityType="FurnitureDB.Store.FurnitureStores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FurnitureFactories" EntityType="FurnitureDB.Store.FurnitureFactories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="FurnitureDB.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductTypes" EntityType="FurnitureDB.Store.ProductTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sectors" EntityType="FurnitureDB.Store.Sectors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="FurnitureDB.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reclamations" EntityType="FurnitureDB.Store.Reclamations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Furnitures" EntityType="FurnitureDB.Store.Furnitures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clients" EntityType="FurnitureDB.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Complaints" EntityType="FurnitureDB.Store.Complaints" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sells" EntityType="FurnitureDB.Store.Sells" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sectors_Sales" EntityType="FurnitureDB.Store.Sectors_Sales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sectors_ReclamationService" EntityType="FurnitureDB.Store.Sectors_ReclamationService" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sectors_CallCenter" EntityType="FurnitureDB.Store.Sectors_CallCenter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FurnitureStoreFurnitureFactory" EntityType="FurnitureDB.Store.FurnitureStoreFurnitureFactory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeEmployee" EntityType="FurnitureDB.Store.EmployeeEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SellsClient" EntityType="FurnitureDB.Store.SellsClient" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_FurnitureStoreFurnitureFactory_FurnitureStore1" Association="FurnitureDB.Store.FK_FurnitureStoreFurnitureFactory_FurnitureStore1">
+      <End Role="FurnitureStore1" EntitySet="FurnitureStores" />
+      <End Role="FurnitureStoreFurnitureFactory" EntitySet="FurnitureStoreFurnitureFactory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FurnitureStoreFurnitureFactory_FurnitureFactory" Association="FurnitureDB.Store.FK_FurnitureStoreFurnitureFactory_FurnitureFactory">
+      <End Role="FurnitureFactory" EntitySet="FurnitureFactories" />
+      <End Role="FurnitureStoreFurnitureFactory" EntitySet="FurnitureStoreFurnitureFactory" />
+    </AssociationSet>
+    <AssociationSet Name="FurnitureStoreSector" Association="FurnitureDB.Store.FurnitureStoreSector">
+      <End Role="FurnitureStore1" EntitySet="FurnitureStores" />
+      <End Role="Sector" EntitySet="Sectors" />
+    </AssociationSet>
+    <AssociationSet Name="FurnitureFactoryProduct" Association="FurnitureDB.Store.FurnitureFactoryProduct">
+      <End Role="FurnitureFactory" EntitySet="FurnitureFactories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductProductType" Association="FurnitureDB.Store.ProductProductType">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductType" EntitySet="ProductTypes" />
+    </AssociationSet>
+    <AssociationSet Name="SellsProduct" Association="FurnitureDB.Store.SellsProduct">
+      <End Role="Sells" EntitySet="Sells" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="SectorEmployee" Association="FurnitureDB.Store.SectorEmployee">
+      <End Role="Sector" EntitySet="Sectors" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeEmployee_Employee" Association="FurnitureDB.Store.FK_EmployeeEmployee_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeEmployee" EntitySet="EmployeeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeEmployee_Employee1" Association="FurnitureDB.Store.FK_EmployeeEmployee_Employee1">
+      <End Role="Employee1" EntitySet="Employees" />
+      <End Role="EmployeeEmployee" EntitySet="EmployeeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FurnitureReclamation" Association="FurnitureDB.Store.FurnitureReclamation">
+      <End Role="Furniture" EntitySet="Furnitures" />
+      <End Role="Reclamation" EntitySet="Reclamations" />
+    </AssociationSet>
+    <AssociationSet Name="ClientFurniture" Association="FurnitureDB.Store.ClientFurniture">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Furniture" EntitySet="Furnitures" />
+    </AssociationSet>
+    <AssociationSet Name="ClientComplaint" Association="FurnitureDB.Store.ClientComplaint">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Complaint" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="SalesSells" Association="FurnitureDB.Store.SalesSells">
+      <End Role="Sales" EntitySet="Sectors_Sales" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <AssociationSet Name="ReclamationServiceReclamation" Association="FurnitureDB.Store.ReclamationServiceReclamation">
+      <End Role="ReclamationService" EntitySet="Sectors_ReclamationService" />
+      <End Role="Reclamation" EntitySet="Reclamations" />
+    </AssociationSet>
+    <AssociationSet Name="CallCenterComplaint" Association="FurnitureDB.Store.CallCenterComplaint">
+      <End Role="CallCenter" EntitySet="Sectors_CallCenter" />
+      <End Role="Complaint" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellsClient_Sells" Association="FurnitureDB.Store.FK_SellsClient_Sells">
+      <End Role="Sells" EntitySet="Sells" />
+      <End Role="SellsClient" EntitySet="SellsClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellsClient_Client" Association="FurnitureDB.Store.FK_SellsClient_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="SellsClient" EntitySet="SellsClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_inherits_Sector" Association="FurnitureDB.Store.FK_Sales_inherits_Sector">
+      <End Role="Sector" EntitySet="Sectors" />
+      <End Role="Sales" EntitySet="Sectors_Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReclamationService_inherits_Sector" Association="FurnitureDB.Store.FK_ReclamationService_inherits_Sector">
+      <End Role="Sector" EntitySet="Sectors" />
+      <End Role="ReclamationService" EntitySet="Sectors_ReclamationService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallCenter_inherits_Sector" Association="FurnitureDB.Store.FK_CallCenter_inherits_Sector">
+      <End Role="Sector" EntitySet="Sectors" />
+      <End Role="CallCenter" EntitySet="Sectors_CallCenter" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FurnitureStores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StreetNum" Type="int" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StreetNumSuffix" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OpeningDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FurnitureFactories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CountryOfOrigin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StreetNum" Type="int" Nullable="false" />
+    <Property Name="StreetNumSuffix" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FurnitureFactoryId" Type="int" Nullable="false" />
+    <Property Name="SellsId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ManufacturingDate" Type="datetime" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FactoryOrigin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Material" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sectors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmployeeCount" Type="int" Nullable="false" />
+    <Property Name="FurnitureStore_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="Education" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sector_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reclamations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="DateOfArrival" Type="datetime" Nullable="false" />
+    <Property Name="ReclamationDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReclamationServiceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Furnitures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductionDate" Type="datetime" Nullable="false" />
+    <Property Name="Color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Collection" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Reclamation_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complaints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CallCenterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sells">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sectors_Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sectors_ReclamationService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sectors_CallCenter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FurnitureStoreFurnitureFactory">
+    <Key>
+      <PropertyRef Name="FurnitureStores_Id" />
+      <PropertyRef Name="FurnitureFactories_Id" />
+    </Key>
+    <Property Name="FurnitureStores_Id" Type="int" Nullable="false" />
+    <Property Name="FurnitureFactories_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeEmployee">
+    <Key>
+      <PropertyRef Name="Employees1_Id" />
+      <PropertyRef Name="Employees_Id" />
+    </Key>
+    <Property Name="Employees1_Id" Type="int" Nullable="false" />
+    <Property Name="Employees_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SellsClient">
+    <Key>
+      <PropertyRef Name="Sells_Id" />
+      <PropertyRef Name="Clients_Id" />
+    </Key>
+    <Property Name="Sells_Id" Type="int" Nullable="false" />
+    <Property Name="Clients_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FurnitureStoreSector">
+    <End Role="FurnitureStore1" Type="FurnitureDB.Store.FurnitureStores" Multiplicity="1" />
+    <End Role="Sector" Type="FurnitureDB.Store.Sectors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FurnitureStore1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sector">
+        <PropertyRef Name="FurnitureStore_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FurnitureFactoryProduct">
+    <End Role="FurnitureFactory" Type="FurnitureDB.Store.FurnitureFactories" Multiplicity="1" />
+    <End Role="Product" Type="FurnitureDB.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FurnitureFactory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="FurnitureFactoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductProductType">
+    <End Role="Product" Type="FurnitureDB.Store.Products" Multiplicity="1" />
+    <End Role="ProductType" Type="FurnitureDB.Store.ProductTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductType">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SellsProduct">
+    <End Role="Sells" Type="FurnitureDB.Store.Sells" Multiplicity="1" />
+    <End Role="Product" Type="FurnitureDB.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sells">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SellsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SectorEmployee">
+    <End Role="Sector" Type="FurnitureDB.Store.Sectors" Multiplicity="1" />
+    <End Role="Employee" Type="FurnitureDB.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Sector_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FurnitureReclamation">
+    <End Role="Furniture" Type="FurnitureDB.Store.Furnitures" Multiplicity="*" />
+    <End Role="Reclamation" Type="FurnitureDB.Store.Reclamations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Reclamation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Furniture">
+        <PropertyRef Name="Reclamation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientFurniture">
+    <End Role="Client" Type="FurnitureDB.Store.Clients" Multiplicity="1" />
+    <End Role="Furniture" Type="FurnitureDB.Store.Furnitures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Furniture">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientComplaint">
+    <End Role="Client" Type="FurnitureDB.Store.Clients" Multiplicity="1" />
+    <End Role="Complaint" Type="FurnitureDB.Store.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Complaint">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SalesSells">
+    <End Role="Sales" Type="FurnitureDB.Store.Sectors_Sales" Multiplicity="1" />
+    <End Role="Sells" Type="FurnitureDB.Store.Sells" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="SalesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReclamationServiceReclamation">
+    <End Role="ReclamationService" Type="FurnitureDB.Store.Sectors_ReclamationService" Multiplicity="1" />
+    <End Role="Reclamation" Type="FurnitureDB.Store.Reclamations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReclamationService">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reclamation">
+        <PropertyRef Name="ReclamationServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CallCenterComplaint">
+    <End Role="CallCenter" Type="FurnitureDB.Store.Sectors_CallCenter" Multiplicity="1" />
+    <End Role="Complaint" Type="FurnitureDB.Store.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallCenter">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Complaint">
+        <PropertyRef Name="CallCenterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FurnitureStoreFurnitureFactory_FurnitureStore1">
+    <End Role="FurnitureStore1" Type="FurnitureDB.Store.FurnitureStores" Multiplicity="1" />
+    <End Role="FurnitureStoreFurnitureFactory" Type="FurnitureDB.Store.FurnitureStoreFurnitureFactory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FurnitureStore1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FurnitureStoreFurnitureFactory">
+        <PropertyRef Name="FurnitureStores_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FurnitureStoreFurnitureFactory_FurnitureFactory">
+    <End Role="FurnitureStoreFurnitureFactory" Type="FurnitureDB.Store.FurnitureStoreFurnitureFactory" Multiplicity="*" />
+    <End Role="FurnitureFactory" Type="FurnitureDB.Store.FurnitureFactories" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="FurnitureFactory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FurnitureStoreFurnitureFactory">
+        <PropertyRef Name="FurnitureFactories_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeEmployee_Employee">
+    <End Role="Employee" Type="FurnitureDB.Store.Employees" Multiplicity="1" />
+    <End Role="EmployeeEmployee" Type="FurnitureDB.Store.EmployeeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeEmployee">
+        <PropertyRef Name="Employees1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeEmployee_Employee1">
+    <End Role="EmployeeEmployee" Type="FurnitureDB.Store.EmployeeEmployee" Multiplicity="*" />
+    <End Role="Employee1" Type="FurnitureDB.Store.Employees" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeEmployee">
+        <PropertyRef Name="Employees_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellsClient_Sells">
+    <End Role="Sells" Type="FurnitureDB.Store.Sells" Multiplicity="1" />
+    <End Role="SellsClient" Type="FurnitureDB.Store.SellsClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sells">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellsClient">
+        <PropertyRef Name="Sells_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellsClient_Client">
+    <End Role="SellsClient" Type="FurnitureDB.Store.SellsClient" Multiplicity="*" />
+    <End Role="Client" Type="FurnitureDB.Store.Clients" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellsClient">
+        <PropertyRef Name="Clients_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_inherits_Sector">
+    <End Role="Sector" Type="FurnitureDB.Store.Sectors" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sales" Type="FurnitureDB.Store.Sectors_Sales" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReclamationService_inherits_Sector">
+    <End Role="Sector" Type="FurnitureDB.Store.Sectors" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReclamationService" Type="FurnitureDB.Store.Sectors_ReclamationService" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReclamationService">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallCenter_inherits_Sector">
+    <End Role="Sector" Type="FurnitureDB.Store.Sectors" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallCenter" Type="FurnitureDB.Store.Sectors_CallCenter" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CallCenter">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FurnitureDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="FurnitureDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FurnitureStores" EntityType="FurnitureDB.FurnitureStore" />
+          <EntitySet Name="FurnitureFactories" EntityType="FurnitureDB.FurnitureFactory" />
+          <EntitySet Name="Products" EntityType="FurnitureDB.Product" />
+          <EntitySet Name="ProductTypes" EntityType="FurnitureDB.ProductType" />
+          <EntitySet Name="Sectors" EntityType="FurnitureDB.Sector" />
+          <EntitySet Name="Employees" EntityType="FurnitureDB.Employee" />
+          <EntitySet Name="Reclamations" EntityType="FurnitureDB.Reclamation" />
+          <EntitySet Name="Furnitures" EntityType="FurnitureDB.Furniture" />
+          <EntitySet Name="Clients" EntityType="FurnitureDB.Client" />
+          <EntitySet Name="Complaints" EntityType="FurnitureDB.Complaint" />
+          <EntitySet Name="Sells" EntityType="FurnitureDB.Sells" />
+          <AssociationSet Name="FurnitureStoreFurnitureFactory" Association="FurnitureDB.FurnitureStoreFurnitureFactory">
+            <End Role="FurnitureStore1" EntitySet="FurnitureStores" />
+            <End Role="FurnitureFactory" EntitySet="FurnitureFactories" />
+          </AssociationSet>
+          <AssociationSet Name="FurnitureStoreSector" Association="FurnitureDB.FurnitureStoreSector">
+            <End Role="FurnitureStore1" EntitySet="FurnitureStores" />
+            <End Role="Sector" EntitySet="Sectors" />
+          </AssociationSet>
+          <AssociationSet Name="FurnitureFactoryProduct" Association="FurnitureDB.FurnitureFactoryProduct">
+            <End Role="FurnitureFactory" EntitySet="FurnitureFactories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="ProductProductType" Association="FurnitureDB.ProductProductType">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductType" EntitySet="ProductTypes" />
+          </AssociationSet>
+          <AssociationSet Name="SellsProduct" Association="FurnitureDB.SellsProduct">
+            <End Role="Sells" EntitySet="Sells" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="SectorEmployee" Association="FurnitureDB.SectorEmployee">
+            <End Role="Sector" EntitySet="Sectors" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeEmployee" Association="FurnitureDB.EmployeeEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Employee1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FurnitureReclamation" Association="FurnitureDB.FurnitureReclamation">
+            <End Role="Furniture" EntitySet="Furnitures" />
+            <End Role="Reclamation" EntitySet="Reclamations" />
+          </AssociationSet>
+          <AssociationSet Name="ClientFurniture" Association="FurnitureDB.ClientFurniture">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Furniture" EntitySet="Furnitures" />
+          </AssociationSet>
+          <AssociationSet Name="ClientComplaint" Association="FurnitureDB.ClientComplaint">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Complaint" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="SalesSells" Association="FurnitureDB.SalesSells">
+            <End Role="Sales" EntitySet="Sectors" />
+            <End Role="Sells" EntitySet="Sells" />
+          </AssociationSet>
+          <AssociationSet Name="ReclamationServiceReclamation" Association="FurnitureDB.ReclamationServiceReclamation">
+            <End Role="ReclamationService" EntitySet="Sectors" />
+            <End Role="Reclamation" EntitySet="Reclamations" />
+          </AssociationSet>
+          <AssociationSet Name="CallCenterComplaint" Association="FurnitureDB.CallCenterComplaint">
+            <End Role="CallCenter" EntitySet="Sectors" />
+            <End Role="Complaint" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="SellsClient" Association="FurnitureDB.SellsClient">
+            <End Role="Sells" EntitySet="Sells" />
+            <End Role="Client" EntitySet="Clients" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FurnitureStore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="StreetNum" Type="Int32" Nullable="false" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="StreetNumSuffix" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="OpeningDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="FurnitureFactories" Relationship="FurnitureDB.FurnitureStoreFurnitureFactory" FromRole="FurnitureStore1" ToRole="FurnitureFactory" />
+          <NavigationProperty Name="Sectors" Relationship="FurnitureDB.FurnitureStoreSector" FromRole="FurnitureStore1" ToRole="Sector" />
+        </EntityType>
+        <EntityType Name="FurnitureFactory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="CountryOfOrigin" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="StreetNum" Type="Int32" Nullable="false" />
+          <Property Name="StreetNumSuffix" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="FurnitureStores" Relationship="FurnitureDB.FurnitureStoreFurnitureFactory" FromRole="FurnitureFactory" ToRole="FurnitureStore1" />
+          <NavigationProperty Name="Products" Relationship="FurnitureDB.FurnitureFactoryProduct" FromRole="FurnitureFactory" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FurnitureFactoryId" Type="Int32" Nullable="false" />
+          <Property Name="SellsId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="ManufacturingDate" Type="DateTime" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="FactoryOrigin" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Material" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="FurnitureFactory" Relationship="FurnitureDB.FurnitureFactoryProduct" FromRole="Product" ToRole="FurnitureFactory" />
+          <NavigationProperty Name="ProductTypes" Relationship="FurnitureDB.ProductProductType" FromRole="Product" ToRole="ProductType" />
+          <NavigationProperty Name="Sell" Relationship="FurnitureDB.SellsProduct" FromRole="Product" ToRole="Sells" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="Product" Relationship="FurnitureDB.ProductProductType" FromRole="ProductType" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="EmployeeCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FurnitureStore" Relationship="FurnitureDB.FurnitureStoreSector" FromRole="Sector" ToRole="FurnitureStore1" />
+          <NavigationProperty Name="Employees" Relationship="FurnitureDB.SectorEmployee" FromRole="Sector" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" />
+          <Property Name="Education" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Salary" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="Sector" Relationship="FurnitureDB.SectorEmployee" FromRole="Employee" ToRole="Sector" />
+          <NavigationProperty Name="Employees" Relationship="FurnitureDB.EmployeeEmployee" FromRole="Employee" ToRole="Employee1" />
+          <NavigationProperty Name="Employees1" Relationship="FurnitureDB.EmployeeEmployee" FromRole="Employee1" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Reclamation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="DateOfArrival" Type="DateTime" Nullable="false" />
+          <Property Name="ReclamationDescription" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="Furniture" Relationship="FurnitureDB.FurnitureReclamation" FromRole="Reclamation" ToRole="Furniture" />
+          <NavigationProperty Name="ReclamationService" Relationship="FurnitureDB.ReclamationServiceReclamation" FromRole="Reclamation" ToRole="ReclamationService" />
+          <Property Name="ReclamationServiceId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Furniture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="ProductionDate" Type="DateTime" Nullable="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Collection" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="Reclamation" Relationship="FurnitureDB.FurnitureReclamation" FromRole="Furniture" ToRole="Reclamation" />
+          <NavigationProperty Name="Client" Relationship="FurnitureDB.ClientFurniture" FromRole="Furniture" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="Furnitures" Relationship="FurnitureDB.ClientFurniture" FromRole="Client" ToRole="Furniture" />
+          <NavigationProperty Name="Complaints" Relationship="FurnitureDB.ClientComplaint" FromRole="Client" ToRole="Complaint" />
+          <NavigationProperty Name="Sells" Relationship="FurnitureDB.SellsClient" FromRole="Client" ToRole="Sells" />
+        </EntityType>
+        <EntityType Name="Complaint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="FurnitureDB.ClientComplaint" FromRole="Complaint" ToRole="Client" />
+          <NavigationProperty Name="CallCenter" Relationship="FurnitureDB.CallCenterComplaint" FromRole="Complaint" ToRole="CallCenter" />
+          <Property Name="CallCenterId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sells">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Products" Relationship="FurnitureDB.SellsProduct" FromRole="Sells" ToRole="Product" />
+          <NavigationProperty Name="Sale" Relationship="FurnitureDB.SalesSells" FromRole="Sells" ToRole="Sales" />
+          <Property Name="SalesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="FurnitureDB.SellsClient" FromRole="Sells" ToRole="Client" />
+        </EntityType>
+        <Association Name="FurnitureStoreFurnitureFactory">
+          <End Type="FurnitureDB.FurnitureStore" Role="FurnitureStore1" Multiplicity="*" />
+          <End Type="FurnitureDB.FurnitureFactory" Role="FurnitureFactory" Multiplicity="*" />
+        </Association>
+        <Association Name="FurnitureStoreSector">
+          <End Type="FurnitureDB.FurnitureStore" Role="FurnitureStore1" Multiplicity="1" />
+          <End Type="FurnitureDB.Sector" Role="Sector" Multiplicity="*" />
+        </Association>
+        <Association Name="FurnitureFactoryProduct">
+          <End Type="FurnitureDB.FurnitureFactory" Role="FurnitureFactory" Multiplicity="1" />
+          <End Type="FurnitureDB.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FurnitureFactory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="FurnitureFactoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductProductType">
+          <End Type="FurnitureDB.Product" Role="Product" Multiplicity="1" />
+          <End Type="FurnitureDB.ProductType" Role="ProductType" Multiplicity="*" />
+        </Association>
+        <Association Name="SellsProduct">
+          <End Type="FurnitureDB.Sells" Role="Sells" Multiplicity="1" />
+          <End Type="FurnitureDB.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sells">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SellsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SectorEmployee">
+          <End Type="FurnitureDB.Sector" Role="Sector" Multiplicity="1" />
+          <End Type="FurnitureDB.Employee" Role="Employee" Multiplicity="*" />
+        </Association>
+        <Association Name="EmployeeEmployee">
+          <End Type="FurnitureDB.Employee" Role="Employee" Multiplicity="*" />
+          <End Type="FurnitureDB.Employee" Role="Employee1" Multiplicity="*" />
+        </Association>
+        <Association Name="FurnitureReclamation">
+          <End Type="FurnitureDB.Furniture" Role="Furniture" Multiplicity="1" />
+          <End Type="FurnitureDB.Reclamation" Role="Reclamation" Multiplicity="1" />
+        </Association>
+        <Association Name="ClientFurniture">
+          <End Type="FurnitureDB.Client" Role="Client" Multiplicity="1" />
+          <End Type="FurnitureDB.Furniture" Role="Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Furniture">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientComplaint">
+          <End Type="FurnitureDB.Client" Role="Client" Multiplicity="1" />
+          <End Type="FurnitureDB.Complaint" Role="Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complaint">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sales" BaseType="FurnitureDB.Sector" >
+          <NavigationProperty Name="Sells" Relationship="FurnitureDB.SalesSells" FromRole="Sales" ToRole="Sells" />
+        </EntityType>
+        <EntityType Name="ReclamationService" BaseType="FurnitureDB.Sector" >
+          <NavigationProperty Name="Reclamations" Relationship="FurnitureDB.ReclamationServiceReclamation" FromRole="ReclamationService" ToRole="Reclamation" />
+        </EntityType>
+        <EntityType Name="CallCenter" BaseType="FurnitureDB.Sector" >
+          <NavigationProperty Name="Complaints" Relationship="FurnitureDB.CallCenterComplaint" FromRole="CallCenter" ToRole="Complaint" />
+        </EntityType>
+        <Association Name="SalesSells">
+          <End Type="FurnitureDB.Sales" Role="Sales" Multiplicity="1" />
+          <End Type="FurnitureDB.Sells" Role="Sells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sells">
+              <PropertyRef Name="SalesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ReclamationServiceReclamation">
+          <End Type="FurnitureDB.ReclamationService" Role="ReclamationService" Multiplicity="1" />
+          <End Type="FurnitureDB.Reclamation" Role="Reclamation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReclamationService">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reclamation">
+              <PropertyRef Name="ReclamationServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CallCenterComplaint">
+          <End Type="FurnitureDB.CallCenter" Role="CallCenter" Multiplicity="1" />
+          <End Type="FurnitureDB.Complaint" Role="Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CallCenter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complaint">
+              <PropertyRef Name="CallCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SellsClient">
+          <End Type="FurnitureDB.Sells" Role="Sells" Multiplicity="*" />
+          <End Type="FurnitureDB.Client" Role="Client" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FurnitureDBStoreContainer" CdmEntityContainer="FurnitureDBContainer">
+    <EntitySetMapping Name="FurnitureStores">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.FurnitureStore)">
+        <MappingFragment StoreEntitySet="FurnitureStores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetNum" ColumnName="StreetNum" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="StreetNumSuffix" ColumnName="StreetNumSuffix" />
+          <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FurnitureFactories">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.FurnitureFactory)">
+        <MappingFragment StoreEntitySet="FurnitureFactories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryOfOrigin" ColumnName="CountryOfOrigin" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="StreetNum" ColumnName="StreetNum" />
+          <ScalarProperty Name="StreetNumSuffix" ColumnName="StreetNumSuffix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FurnitureFactoryId" ColumnName="FurnitureFactoryId" />
+          <ScalarProperty Name="SellsId" ColumnName="SellsId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ManufacturingDate" ColumnName="ManufacturingDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FactoryOrigin" ColumnName="FactoryOrigin" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.ProductType)">
+        <MappingFragment StoreEntitySet="ProductTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sectors">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Sector)">
+        <MappingFragment StoreEntitySet="Sectors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmployeeCount" ColumnName="EmployeeCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Sales)">
+        <MappingFragment StoreEntitySet="Sectors_Sales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.ReclamationService)">
+        <MappingFragment StoreEntitySet="Sectors_ReclamationService">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.CallCenter)">
+        <MappingFragment StoreEntitySet="Sectors_CallCenter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reclamations">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Reclamation)">
+        <MappingFragment StoreEntitySet="Reclamations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateOfArrival" ColumnName="DateOfArrival" />
+          <ScalarProperty Name="ReclamationDescription" ColumnName="ReclamationDescription" />
+          <ScalarProperty Name="ReclamationServiceId" ColumnName="ReclamationServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Furnitures">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Furniture)">
+        <MappingFragment StoreEntitySet="Furnitures">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ProductionDate" ColumnName="ProductionDate" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Collection" ColumnName="Collection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Client)">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Complaint)">
+        <MappingFragment StoreEntitySet="Complaints">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CallCenterId" ColumnName="CallCenterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sells">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Sells)">
+        <MappingFragment StoreEntitySet="Sells">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FurnitureStoreFurnitureFactory" TypeName="FurnitureDB.FurnitureStoreFurnitureFactory" StoreEntitySet="FurnitureStoreFurnitureFactory">
+      <EndProperty Name="FurnitureStore1">
+        <ScalarProperty Name="Id" ColumnName="FurnitureStores_Id" />
+      </EndProperty>
+      <EndProperty Name="FurnitureFactory">
+        <ScalarProperty Name="Id" ColumnName="FurnitureFactories_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FurnitureStoreSector" TypeName="FurnitureDB.FurnitureStoreSector" StoreEntitySet="Sectors">
+      <EndProperty Name="FurnitureStore1">
+        <ScalarProperty Name="Id" ColumnName="FurnitureStore_Id" />
+      </EndProperty>
+      <EndProperty Name="Sector">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductProductType" TypeName="FurnitureDB.ProductProductType" StoreEntitySet="ProductTypes">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductType">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SectorEmployee" TypeName="FurnitureDB.SectorEmployee" StoreEntitySet="Employees">
+      <EndProperty Name="Sector">
+        <ScalarProperty Name="Id" ColumnName="Sector_Id" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeeEmployee" TypeName="FurnitureDB.EmployeeEmployee" StoreEntitySet="EmployeeEmployee">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Employees1_Id" />
+      </EndProperty>
+      <EndProperty Name="Employee1">
+        <ScalarProperty Name="Id" ColumnName="Employees_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FurnitureReclamation" TypeName="FurnitureDB.FurnitureReclamation" StoreEntitySet="Furnitures">
+      <EndProperty Name="Reclamation">
+        <ScalarProperty Name="Id" ColumnName="Reclamation_Id" />
+      </EndProperty>
+      <EndProperty Name="Furniture">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SellsClient" TypeName="FurnitureDB.SellsClient" StoreEntitySet="SellsClient">
+      <EndProperty Name="Sells">
+        <ScalarProperty Name="Id" ColumnName="Sells_Id" />
+      </EndProperty>
+      <EndProperty Name="Client">
+        <ScalarProperty Name="Id" ColumnName="Clients_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
